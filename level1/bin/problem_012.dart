@@ -1,0 +1,16 @@
+import 'dart:io';
+
+import 'package:level1/level1.dart';
+
+void main() {
+  stdout.write('Enter Number one : ');
+  String? inputOne = stdin.readLineSync();
+  stdout.write('Enter Number tow : ');
+  String? inputTwo = stdin.readLineSync();
+
+  int numberOne = stringToInt(inputOne!);
+  int numberTwo = stringToInt(inputTwo!);
+
+  int area = numberTwo * numberOne;
+  print('Area is $area');
+}
