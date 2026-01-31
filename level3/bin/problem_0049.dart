@@ -20,7 +20,7 @@ class ClsClientData {
     required this.balance,
   });
 
-/// A factory constructor to create a ClsClientData instance from a line record.
+  /// A factory constructor to create a ClsClientData instance from a line record.
   factory ClsClientData.fromLine(
     String lineRecord, [
     String separator = '#//#',
@@ -37,7 +37,6 @@ class ClsClientData {
     );
   }
 }
-
 
 /// A function to load client data from a file.
 List<ClsClientData> loadDataFromFile(String fileName) {
@@ -71,6 +70,7 @@ ClsClientData? findClientByAccountNumber(
     return null;
   }
 }
+
 /// A function to print client details in a formatted card.
 void printClientCard(ClsClientData client) {
   print("\n========================================");
