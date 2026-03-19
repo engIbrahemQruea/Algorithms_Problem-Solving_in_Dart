@@ -1,0 +1,24 @@
+"أنا الآن في فيديو [             
+
+   ]، المحاضر يشرح [           
+ 
+ String Library Project (Requirements) (22:54)
+ ] بأسلوب C++.
+بدلاً من مجرد تحويل الكود، أريدك أن تلعب دور Senior Software Architect:
+
+التصميم المعماري: كيف يتم تصميم هذا المفهوم في Dart ليناسب تطبيقات Flutter الكبيرة والأنظمة المعقدة؟
+
+الأخطاء الشائعة (Anti-patterns): ما هي الأخطاء التي قد يقع فيها مبرمج Dart عند تطبيق هذا المفهوم؟ وكيف أتجنبها باستخدام (Null Safety) والممارسات الحديثة؟
+
+إدارة الذاكرة: كيف يؤثر هذا المفهوم على أداء الذاكرة في Dart (Garbage Collection) مقارنة بـ C++ (Manual Memory Management)؟
+
+تطوير مشروع البنك: حدث لي كود 'مشروع البنك' بأسلوب احترافي يستخدم ميزات Dart التي لا توجد في C++ (مثل: factory constructors, mixins, extensions, أو required parameters,Record ,patterns ,Interface ,abstract,static,...)."
+
+
+هاذا الاسئلة الي في الفيديوا مع تقييم اجابتي
+
+
+
+هاذا المثال الي تم شرحة
+
+
