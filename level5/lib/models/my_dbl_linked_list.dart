@@ -11,8 +11,11 @@ class Node<T> {
 class MyDblLinkedList<T> {
   Node<T>? _head;
   Node<T>? _tail;
+  int _length = 0;
 
-  bool get isEmpty => _head == null;
+  int get size => _length;
+
+  bool get isEmpty => _length == 0;
 
   void insertAtBeginning(T value) {
     final newNode = Node(value);
@@ -23,6 +26,7 @@ class MyDblLinkedList<T> {
       _head?.prev = newNode;
       _head = newNode;
     }
+    _length++;
   }
 
   Node<T>? find(T value) {
@@ -46,6 +50,7 @@ class MyDblLinkedList<T> {
     }
 
     node.next = newNode;
+    _length++;
   }
 
   void insertAtEnd(T value) {
@@ -56,50 +61,32 @@ class MyDblLinkedList<T> {
       _tail?.next = newNode..prev = _tail;
       _tail = newNode;
     }
+    _length++;
   }
 
   void deleteNode(Node<T> node) {
-    if (isEmpty || node == null) return;
-    if (node == _head) {
-      _head = node.next;
-      if (_head != null) {
-        _head?.prev = null;
-      } else {
-        _tail = null;
-      }
-    } else if (node == _tail) {
-      _tail = node.prev;
-      _tail?.next = null;
-    } else {
-      node.prev?.next = node.next;
-      node.next?.prev = node.prev;
-    }
+    if (isEmpty) return;
+    if (node == _head) _head = node.next;
+    if (node == _tail) _tail = node.prev;
+
+    node.prev?.next = node.next;
+    node.next?.prev = node.prev;
     node
       ..next = null
       ..prev = null;
+    _length--;
   }
 
   void deleteFirstNode() {
-    if (_head != null) {
-      _head = _head?.next;
-      if (_head != null) {
-        _head?.prev = null;
-      } else {
-        _tail = null;
-      }
-    }
+    if (_head == null) return;
+
+    deleteNode(_head!);
   }
 
   void deleteLastNode() {
     if (_tail == null) return;
 
-    if (_head == _tail) {
-      _head = _tail = null;
-      return;
-    }
-
-    _tail = _tail!.prev;
-    _tail!.next = null;
+    deleteNode(_tail!);
   }
 
   void printAll() {
