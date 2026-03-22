@@ -55,6 +55,21 @@ class MyDblLinkedList<T> {
     _length++;
   }
 
+  void clear() {
+    if (isEmpty) return;
+
+    _head = null;
+    _tail = null;
+    _length = 0;
+  }
+
+  void _clearAll() {
+    if (isEmpty) return;
+    while (isNotEmpty) {
+      deleteFirstNode();
+    }
+  }
+
   void insertAtEnd(T value) {
     final newNode = Node(value, next: null);
     if (isEmpty) {

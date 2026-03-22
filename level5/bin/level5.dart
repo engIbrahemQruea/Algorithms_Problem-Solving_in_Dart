@@ -27,6 +27,9 @@ void main() {
   } else {
     print('Linked List is not Empty');
   }
+  myDblLinkedList.clear();
+
+  print("The Number of items in the linked list After Clear is: ${myDblLinkedList.size}");
 
   // final findNode = myDblLinkedList.find(2);
   // if (findNode != null) {
