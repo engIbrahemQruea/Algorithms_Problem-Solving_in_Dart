@@ -17,6 +17,8 @@ class MyDblLinkedList<T> {
 
   bool get isEmpty => _length == 0;
 
+  bool get isNotEmpty => !isEmpty;
+
   void insertAtBeginning(T value) {
     final newNode = Node(value);
     if (isEmpty) {
