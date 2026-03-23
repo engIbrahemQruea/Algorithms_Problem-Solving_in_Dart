@@ -22,14 +22,19 @@ void main() {
 
   print("The Number of items in the linked list is ${myDblLinkedList.size}");
 
-  if (myDblLinkedList.isEmpty) {
-    print('Linked List is Empty');
-  } else {
-    print('Linked List is not Empty');
-  }
-  myDblLinkedList.clear();
+  // if (myDblLinkedList.isEmpty) {
+  //   print('Linked List is Empty');
+  // } else {
+  //   print('Linked List is not Empty');
+  // }
+  // myDblLinkedList.clear();
 
-  print("The Number of items in the linked list After Clear is: ${myDblLinkedList.size}");
+  print("The  items in the linked list After Reverse");
+
+ // myDblLinkedList.reverse();
+  myDblLinkedList.reverse();
+  myDblLinkedList.printAll();
+
 
   // final findNode = myDblLinkedList.find(2);
   // if (findNode != null) {

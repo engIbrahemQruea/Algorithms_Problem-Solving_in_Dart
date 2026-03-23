@@ -114,4 +114,23 @@ class MyDblLinkedList<T> {
     }
     stdout.writeln();
   }
+
+  void reverse() {
+    if (isEmpty || _head == _tail) return;
+
+    Node<T>? current = _head;
+    Node<T>? temp;
+
+    while (current != null) {
+      temp = current.prev;
+      current.prev = current.next;
+      current.next = temp;
+
+      current = current.prev;
+    }
+
+    temp = _head;
+    _head = _tail;
+    _tail = temp;
+  }
 }
