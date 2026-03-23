@@ -41,7 +41,9 @@ void main() {
   myDblLinkedList.updateAt(2, 500);
   myDblLinkedList.printAll();
 
-
+  print('After  InserAt: ');
+  myDblLinkedList.insertAt(3, 300);
+  myDblLinkedList.printAll();
 
   // myDblLinkedList.reverse();
   // myDblLinkedList.reverse();

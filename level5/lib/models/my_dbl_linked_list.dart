@@ -169,4 +169,23 @@ class MyDblLinkedList<T> {
     node.value = value;
     return true;
   }
+
+  bool insertAt(int index, T value) {
+    if (index < 0 || index > _length) return false;
+    if (index == 0) {
+      insertAtBeginning(value);
+      return true;
+    }
+    if (index == _length) {
+      insertAtEnd(value);
+      return true;
+    }
+    final targetNode = getNodeAt(index - 1);
+    if (targetNode != null) {
+      insertAfter(targetNode, value);
+      return true;
+    }
+
+    return false;
+  }
 }
