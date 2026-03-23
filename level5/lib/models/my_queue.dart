@@ -1,5 +1,5 @@
 import 'package:level5/models/my_dbl_linked_list.dart';
-
+part 'my_stack.dart';
 class MyQueue<T> {
   final MyDblLinkedList<T> _myList = MyDblLinkedList<T>();
 
