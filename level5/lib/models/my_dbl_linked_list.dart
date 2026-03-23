@@ -159,4 +159,14 @@ class MyDblLinkedList<T> {
 
     return getNodeAt(index)?.value;
   }
+
+  bool updateAt(int index, T value) {
+    if (index < 0 || index >= _length) return false;
+
+    final node = getNodeAt(index);
+    if (node == null) return false;
+
+    node.value = value;
+    return true;
+  }
 }

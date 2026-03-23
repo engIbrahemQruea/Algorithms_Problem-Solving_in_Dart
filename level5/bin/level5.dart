@@ -37,6 +37,12 @@ void main() {
 
   print("Item at index 2: ${myDblLinkedList.getItem(2)}");
 
+  print("After Update at index 2");
+  myDblLinkedList.updateAt(2, 500);
+  myDblLinkedList.printAll();
+
+
+
   // myDblLinkedList.reverse();
   // myDblLinkedList.reverse();
   // myDblLinkedList.printAll();
