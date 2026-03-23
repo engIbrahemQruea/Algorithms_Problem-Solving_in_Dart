@@ -153,4 +153,10 @@ class MyDblLinkedList<T> {
 
     return current;
   }
+
+  T? getItem(int index) {
+    if (index < 0 || index >= _length) return null;
+
+    return getNodeAt(index)?.value;
+  }
 }

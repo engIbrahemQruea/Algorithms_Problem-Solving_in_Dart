@@ -35,6 +35,8 @@ void main() {
   n = myDblLinkedList.getNodeAt(2);
   print('Node at index 2: ${n?.value}');
 
+  print("Item at index 2: ${myDblLinkedList.getItem(2)}");
+
   // myDblLinkedList.reverse();
   // myDblLinkedList.reverse();
   // myDblLinkedList.printAll();
