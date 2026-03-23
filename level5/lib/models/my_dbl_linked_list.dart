@@ -133,4 +133,24 @@ class MyDblLinkedList<T> {
     _head = _tail;
     _tail = temp;
   }
+
+  Node<T>? getNodeAt(int index) {
+    if (index < 0 || index >= _length) return null;
+
+    Node<T>? current;
+
+    if (index < (_length >> 1)) {
+      current = _head;
+      for (int i = 0; i < index; i++) {
+        current = current?.next;
+      }
+    } else {
+      current = _tail;
+      for (int i = _length - 1; i > index; i--) {
+        current = current?.prev;
+      }
+    }
+
+    return current;
+  }
 }

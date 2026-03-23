@@ -31,10 +31,13 @@ void main() {
 
   print("The  items in the linked list After Reverse");
 
- // myDblLinkedList.reverse();
-  myDblLinkedList.reverse();
-  myDblLinkedList.printAll();
+  Node<int>? n;
+  n = myDblLinkedList.getNodeAt(2);
+  print('Node at index 2: ${n?.value}');
 
+  // myDblLinkedList.reverse();
+  // myDblLinkedList.reverse();
+  // myDblLinkedList.printAll();
 
   // final findNode = myDblLinkedList.find(2);
   // if (findNode != null) {
