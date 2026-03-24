@@ -61,7 +61,11 @@ void main() {
     print('Item not found in the array.');
   }
 
-  myDynamicArray.removeItem(30);
-  print('After Remove Item:');
+  // myDynamicArray.removeItem(30);
+  // print('After Remove Item:');
+  // myDynamicArray.printList();
+
+  myDynamicArray.insertAt(2, 500);
+  print('After Insertion 500 After 2:');
   myDynamicArray.printList();
 }

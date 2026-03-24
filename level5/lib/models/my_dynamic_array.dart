@@ -168,6 +168,23 @@ class MyDynamicArray<T> {
     return true;
   }
 
+  void insertAt(int index, T value) {
+    if (index < 0 || index > _size) {
+      throw RangeError.index(index, _array);
+    }
+
+    if (_size == _capacity) {
+      _resize(_capacity == 0 ? 1 : _capacity * 2);
+    }
+
+    for (int i = _size - 1; i >= index; i--) {
+      _array[i + 1] = _array[i];
+    }
+
+    _array[index] = value;
+    _size++;
+  }
+
   void printList() {
     for (int i = 0; i < _size; i++) {
       stdout.write('${_array[i]} ');
