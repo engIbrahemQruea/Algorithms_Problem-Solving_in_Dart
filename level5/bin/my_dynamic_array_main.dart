@@ -42,7 +42,15 @@ void main() {
   // print('After Clear:');
   // myDynamicArray.printList();
 
-  myDynamicArray.removeAt(2);
-  print('After Remove at index 2:');
+  // myDynamicArray.removeAt(2);
+  // print('After Remove at index 2:');
+  // myDynamicArray.printList();
+
+  myDynamicArray.removeFirst();
+  print('After Remove First:');
   myDynamicArray.printList();
+
+  myDynamicArray.removeLast();
+  print('After Remove Last:');
+  myDynamicArray.printList(); 
 }

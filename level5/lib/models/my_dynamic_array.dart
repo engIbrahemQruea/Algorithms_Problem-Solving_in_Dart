@@ -127,6 +127,29 @@ class MyDynamicArray<T> {
     _size--;
   }
 
+  void removeFirst() {
+    if (isEmpty) throw StateError('Array is empty');
+    removeAt(0);
+    _shrinkIfNeeded();
+  }
+
+  void removeLast() {
+    if (isEmpty) throw StateError('Array is empty');
+    _array[_size - 1] = null;
+    _size--;
+    _shrinkIfNeeded();
+  }
+
+  void _shrinkIfNeeded() {
+    const minCapacity = 10;
+
+    if (_capacity > minCapacity && _size <= _capacity ~/ 4) {
+      int newCapacity = _capacity ~/ 2;
+      if (newCapacity < minCapacity) newCapacity = minCapacity;
+      _resize(newCapacity);
+    }
+  }
+
   void printList() {
     for (int i = 0; i < _size; i++) {
       stdout.write('${_array[i]} ');
