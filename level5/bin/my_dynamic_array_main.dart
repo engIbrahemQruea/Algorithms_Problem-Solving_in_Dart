@@ -11,7 +11,7 @@ void main() {
   myDynamicArray.add(40);
   myDynamicArray.add(50);
 
-  myDynamicArray.setItem(2, 35);
+  //myDynamicArray.setItem(2, 35);
 
   print("Is Empty: ${myDynamicArray.isEmpty}");
   print("Is Full: ${myDynamicArray.isFull}");
@@ -46,11 +46,22 @@ void main() {
   // print('After Remove at index 2:');
   // myDynamicArray.printList();
 
-  myDynamicArray.removeFirst();
-  print('After Remove First:');
-  myDynamicArray.printList();
+  // myDynamicArray.removeFirst();
+  // print('After Remove First:');
+  // myDynamicArray.printList();
 
-  myDynamicArray.removeLast();
-  print('After Remove Last:');
-  myDynamicArray.printList(); 
+  // myDynamicArray.removeLast();
+  // print('After Remove Last:');
+  // myDynamicArray.printList();
+
+  int index = myDynamicArray.find(30);
+  if (index != -1) {
+    print('Item found at index: $index');
+  } else {
+    print('Item not found in the array.');
+  }
+
+  myDynamicArray.removeItem(30);
+  print('After Remove Item:');
+  myDynamicArray.printList();
 }

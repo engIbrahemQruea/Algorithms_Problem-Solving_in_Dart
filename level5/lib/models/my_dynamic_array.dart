@@ -150,6 +150,24 @@ class MyDynamicArray<T> {
     }
   }
 
+  int find(T value) {
+    for (int i = 0; i < _size; i++) {
+      if (_array[i] == value) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  bool removeItem(T value) {
+    int index = find(value);
+    if (index == -1) return false;
+
+    removeAt(index);
+    _shrinkIfNeeded();
+    return true;
+  }
+
   void printList() {
     for (int i = 0; i < _size; i++) {
       stdout.write('${_array[i]} ');
