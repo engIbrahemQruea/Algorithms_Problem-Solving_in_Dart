@@ -114,6 +114,19 @@ class MyDynamicArray<T> {
     _size = 0;
   }
 
+  void removeAt(int index) {
+    if (index < 0 || index >= _size) {
+      throw RangeError.index(index, _array);
+    }
+
+    for (int i = index; i < _size - 1; i++) {
+      _array[i] = _array[i + 1];
+    }
+
+    _array[_size - 1] = null;
+    _size--;
+  }
+
   void printList() {
     for (int i = 0; i < _size; i++) {
       stdout.write('${_array[i]} ');

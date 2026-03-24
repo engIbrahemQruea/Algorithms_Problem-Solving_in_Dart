@@ -34,11 +34,15 @@ void main() {
 
   print('Item at index 2: ${myDynamicArray.getItem(2)}');
 
-  myDynamicArray.reverse();
-  print('After Reverse:');
-  myDynamicArray.printList();
+  // myDynamicArray.reverse();
+  // print('After Reverse:');
+  // myDynamicArray.printList();
 
-  myDynamicArray.clear();
-  print('After Clear:');
+  // myDynamicArray.clear();
+  // print('After Clear:');
+  // myDynamicArray.printList();
+
+  myDynamicArray.removeAt(2);
+  print('After Remove at index 2:');
   myDynamicArray.printList();
 }
