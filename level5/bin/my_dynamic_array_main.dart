@@ -65,7 +65,23 @@ void main() {
   // print('After Remove Item:');
   // myDynamicArray.printList();
 
-  myDynamicArray.insertAt(2, 500);
-  print('After Insertion 500 After 2:');
+  // myDynamicArray.insertAt(2, 500);
+  // print('After Insertion 500 After 2:');
+  // myDynamicArray.printList();
+
+  myDynamicArray.insertAtBeginning(1000);
+  print('After Insertion 1000 At Beginning:');
+  myDynamicArray.printList();
+
+  myDynamicArray.insertBefore(2, 500);
+  print("After Insertion 500 Before 2:");
+  myDynamicArray.printList();
+
+  myDynamicArray.insertAfter(2, 600);
+  print("After Insertion 600 After 2:");
+  myDynamicArray.printList();
+
+  myDynamicArray.insertAtEnd(700);
+  print("After Insertion 700 At End:");
   myDynamicArray.printList();
 }

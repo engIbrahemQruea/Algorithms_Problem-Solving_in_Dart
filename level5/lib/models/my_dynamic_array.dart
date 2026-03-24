@@ -36,13 +36,7 @@ class MyDynamicArray<T> {
     _array[index] = value;
   }
 
-  void add(T value) {
-    if (_size == _capacity) {
-      _resize(_capacity == 0 ? 1 : _capacity * 2);
-    }
-    _array[_size] = value;
-    _size++;
-  }
+  void add(T value) => insertAt(_size, value);
 
   void _resize(int newCapacity) {
     if (newCapacity < _size) {
@@ -184,6 +178,26 @@ class MyDynamicArray<T> {
     _array[index] = value;
     _size++;
   }
+
+  void insertAtBeginning(T value) => insertAt(0, value);
+
+  void insertBefore(int index, T value) {
+    if (index <= 0) {
+      insertAt(0, value);
+    } else {
+      insertAt(index - 1, value);
+    }
+  }
+
+  void insertAfter(int index, T value) {
+    if (index >= _size - 1) {
+      insertAt(_size, value);
+    } else {
+      insertAt(index + 1, value);
+    }
+  }
+
+  void insertAtEnd(T value) => add(value);
 
   void printList() {
     for (int i = 0; i < _size; i++) {
