@@ -20,17 +20,25 @@ void main() {
   print('List Items:');
   myDynamicArray.printList();
 
-  myDynamicArray.resize(2);
-  print('Array after resize:${myDynamicArray.capacity}');
-  print("Array Size: ${myDynamicArray.size}");
-  print('List Items:');
+  // myDynamicArray.resize(2);
+  // print('Array after resize:${myDynamicArray.capacity}');
+  // print("Array Size: ${myDynamicArray.size}");
+  // print('List Items:');
+  // myDynamicArray.printList();
+
+  // myDynamicArray.resize(10);
+  // print('Array after resize:${myDynamicArray.capacity}');
+  // print("Array Size: ${myDynamicArray.size}");
+  // print('List Items:');
+  // myDynamicArray.printList();
+
+  print('Item at index 2: ${myDynamicArray.getItem(2)}');
+
+  myDynamicArray.reverse();
+  print('After Reverse:');
   myDynamicArray.printList();
 
-  myDynamicArray.resize(10);
-  print('Array after resize:${myDynamicArray.capacity}');
-  print("Array Size: ${myDynamicArray.size}");
-  print('List Items:');
+  myDynamicArray.clear();
+  print('After Clear:');
   myDynamicArray.printList();
-
-
 }

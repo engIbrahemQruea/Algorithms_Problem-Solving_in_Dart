@@ -44,19 +44,6 @@ class MyDynamicArray<T> {
     _size++;
   }
 
-  T getItem(int index) {
-    if (index < 0 || index >= _size) {
-      throw RangeError.index(
-        index,
-        _array,
-        'index',
-        'Index out of bounds',
-        _size,
-      );
-    }
-    return _array[index] as T;
-  }
-
   void _resize(int newCapacity) {
     if (newCapacity < _size) {
       throw ArgumentError('New capacity cannot be less than size');
@@ -84,6 +71,47 @@ class MyDynamicArray<T> {
       }
     }
     _size = newSize;
+  }
+
+  T getItem(int index) {
+    if (index < 0 || index >= _size) {
+      throw RangeError.index(
+        index,
+        _array,
+        'index',
+        'Index out of bounds',
+        _size,
+      );
+    }
+    return _array[index] as T;
+  }
+
+  void reverse() {
+    if (_size <= 1) return;
+
+    int left = 0;
+    int right = _size - 1;
+
+    while (left < right) {
+      final temp = _array[left];
+      _array[left] = _array[right];
+      _array[right] = temp;
+
+      left++;
+      right--;
+    }
+  }
+
+  void clear({bool shrink = false}) {
+    if (shrink) {
+      _array = List<T?>.filled(1, null);
+      _capacity = 1;
+    } else {
+      for (int i = 0; i < _size; i++) {
+        _array[i] = null;
+      }
+    }
+    _size = 0;
   }
 
   void printList() {
