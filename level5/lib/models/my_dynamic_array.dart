@@ -57,6 +57,35 @@ class MyDynamicArray<T> {
     return _array[index] as T;
   }
 
+  void _resize(int newCapacity) {
+    if (newCapacity < _size) {
+      throw ArgumentError('New capacity cannot be less than size');
+    }
+
+    List<T?> newArray = List<T?>.filled(newCapacity, null);
+    for (int i = 0; i < _size; i++) {
+      newArray[i] = _array[i];
+    }
+    _array = newArray;
+    _capacity = newCapacity;
+  }
+
+  void resize(int newSize) {
+    if (newSize < 0) {
+      throw ArgumentError('New size cannot be negative');
+    }
+    if (newSize > _capacity) {
+      _resize(newSize);
+    }
+
+    if (newSize < _size) {
+      for (int i = newSize; i < _size; i++) {
+        _array[i] = null;
+      }
+    }
+    _size = newSize;
+  }
+
   void printList() {
     for (int i = 0; i < _size; i++) {
       stdout.write('${_array[i]} ');

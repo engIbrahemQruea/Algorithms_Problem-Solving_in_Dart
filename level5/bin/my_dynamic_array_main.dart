@@ -19,4 +19,18 @@ void main() {
   print(" list capacity: ${myDynamicArray.capacity}");
   print('List Items:');
   myDynamicArray.printList();
+
+  myDynamicArray.resize(2);
+  print('Array after resize:${myDynamicArray.capacity}');
+  print("Array Size: ${myDynamicArray.size}");
+  print('List Items:');
+  myDynamicArray.printList();
+
+  myDynamicArray.resize(10);
+  print('Array after resize:${myDynamicArray.capacity}');
+  print("Array Size: ${myDynamicArray.size}");
+  print('List Items:');
+  myDynamicArray.printList();
+
+
 }
