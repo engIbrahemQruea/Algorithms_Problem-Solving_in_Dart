@@ -1,5 +1,5 @@
 import 'package:level5/models/my_dynamic_array.dart';
-
+part 'my_stack_arr.dart';
 class MyQueueArr<T> {
   final MyDynamicArray<T> _myList = MyDynamicArray<T>();
 
